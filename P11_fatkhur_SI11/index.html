@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game - Batu,Gunting dan Kertas</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- import font awesome untuk akses icons secara online -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="game">
+        <div id="opts">
+            <a title="Rock">
+                <i class="fas fa-hand-rock fa-2x fa-rotate-90" aria-hidden="true"></i>
+                Rock
+            </a>
+
+            <a title="Paper">
+                <i class="fas fa-hand-paper fa-2x fa-rotate-90" aria-hidden="true"></i>
+                Paper
+            </a>
+
+            <a title="Scissors">
+                <i class="fas fa-hand-scissors fa-2x fa-flip-horizontal" aria-hidden="true"></i>
+                Scissors
+            </a>
+        </div>
+
+        <div id="computer">
+            <p>
+                <b>Computer</b>:
+                <span id="result">None</span>
+            </p>
+        </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

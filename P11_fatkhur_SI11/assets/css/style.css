@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background: #333;
+    color: #fff;
+    font-family: "Fira Sans", sans-serif;
+    margin: 0;
+}
+
+#game {
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#opts {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+}
+
+a {
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a:hover {
+    color: #ccc;
+}
+
+i {
+    pointer-events: none;
+    touch-action: none;
+}
+
+#computer {
+    text-align: center;
+}

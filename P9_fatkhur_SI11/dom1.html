@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum 9.1</title>
+</head>
+
+<body>
+    <h1>Menghitung luas dan keliling lingkaran menggunakan JavaScript</h1>
+    <span id="phi"></span>
+    <br>
+    <span id="jari"></span>
+    <br>
+    <span id="luas"></span>
+    <br>
+    <span id="keliling"></span>
+
+    <!-- Kode JavaScript -->
+    <script>
+        const phi = 3.14;
+        let r = 14;
+        let l = phi * (r * r);
+        let k = phi * (2 * r);
+
+        console.log(l);
+        console.log(k);
+
+        document.getElementById("phi").innerHTML = "Phi : " + phi;
+        document.getElementById("jari").innerHTML = "Jari-jari : " + r;
+        document.getElementById("luas").innerHTML = "Luas Lingkaran : " + l;
+        document.getElementById("keliling").innerHTML = "Keliling Lingkarn : " + k;
+    </script>
+
+</body>
+
+</html>

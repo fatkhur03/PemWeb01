@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum 9.3</title>
+</head>
+<body style="padding:15px ;">
+    <div style="float: left;">
+        <img width="150px" src="https://i.postimg.cc/3NSrXXvD/parkir.jpg" alt="">
+    </div>
+    <b>Biaya Parkir</b>
+    <hr>
+    <div>
+        <form action="">
+            <table style="font-family:Cascadia Code SemiBold; padding: 10px;">
+                <tr>
+                    <td>Jam Masuk</td>
+                    <td>:</td>
+                    <td><input type="number" id="masuk"></td>
+                </tr>
+                <tr>
+                    <td>Jam Keluar</td>
+                    <td>:</td>
+                    <td><input type="number" id="keluar"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><input type="button" value="Hitung" onclick="parkir()"></td>
+                </tr>
+                <tr>
+                    <td>Biaya</td>
+                    <td>:</td>
+                    <td><input type="text" id="biata"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        function parkir(){
+            let jam_masuk = document.getElementById("masuk");
+            let jam_keluar = document.getElementById("keluar");
+            let total_waktu = jam_keluar - jam_masuk;
+
+            let tarif_awal = 3000;
+            let selisih_waktu = math.round(total_waktu -2);
+            let tarif_lanjut = selisih_waktu * 1000;
+            let total_tarif = tarif_awal + tarif_lanjut;
+
+            document.getElementById("biaya").value = "Rp. " + total_tarif;
+        }
+    </script>
+    <hr>
+    
+</body>
+</html>

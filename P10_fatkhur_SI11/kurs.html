@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi mata uang</title>
+    <script>
+        function kurs() {
+            let inp_uang = document.getElementById("uang").value;
+            let mata_uang = document.getElementById("pilihan").value;
+            let span_konversi;
+
+            if (mata_uang == "usd") {
+                span_konversi = inp_uang * 1915;
+                document.getElementById("konversi").value = span_konversi;
+                
+            }else if (mata_uang == "sd") {
+                span_konversi = inp_uang * 13472;
+                document.getElementById("konversi").value = span_konversi;
+
+            }else if (mata_uang == "rm") {
+                span_konversi = inp_uang * 874;
+                document.getElementById("konversi").value = span_konversi;
+
+            }else if (mata_uang == "yen") {
+                span_konversi = inp_uang * 120;
+                document.getElementById("konversi").value = span_konversi;
+
+            }else if (mata_uang == "eu") {
+                span_konversi = inp_uang * 15888;
+                document.getElementById("konversi").value = span_konversi;
+
+            }else if (mata_uang == "riyal") {
+                span_konversi = inp_uang * 3592;
+                document.getElementById("konversi").value = span_konversi;
+                
+            }else {
+                span_konversi = "Anda tidak memilih";
+                document.getElementById("konversi").value = span_konversi;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="">
+        <fieldset  style="background-color:rgb(57, 205, 246)">
+            <fieldset >
+        <legend >Kurs Rupiah - Mata Uang Asing</legend>
+        <br>
+        <table>
+            <thead>
+                <th>Masukkan Nilai</th>
+                <th>Valas</th>
+                <th>Nilai Rupiah</th>
+            </thead>
+            <tbody>
+                <td>
+                    <input type="number" id="uang" onchange="kusr()">
+                </td>
+                <td>
+                    <select id="pilihan" onchange="kurs()">
+                        <option hidden>---pilih---</option>
+                        <option value="usd">Dolar US</option>
+                        <option value="sd">Dolar Singapore</option>
+                        <option value="rm">Ringgit Malaysia</option>
+                        <option value="yen">Yen Jepang</option>
+                        <option value="eu">Euro</option>
+                        <option value="riyal">Riyal Arab Saudi</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" id="konversi">
+                </td>
+            </tbody>
+        </table>
+    </fieldset>
+    </form>
+</body>
+
+</html>

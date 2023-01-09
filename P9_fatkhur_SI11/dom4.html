@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <div class="card">
+                    <h4 style="padding:10px ;" align="center">Menghitung Jumlah <br> Dua
+                        Bilangan Otomatis</h4>
+                    <div class="card-body">
+                        <form name='penjumlahan' method='post'>
+                            <div class="form-group">
+                                <input class="form-control" type='text' name='angka1' onchange='hitungjumlah();'
+                                    placeholder="Masukkan angka pertama">
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control" type='text' name='angka2' onchange='hitungjumlah();'
+                                    placeholder="Masukkan angka kedua">
+                            </div>
+
+                            <div class="form-group mb-0">
+                                <input class="form-control" type='text' name='jumlah' onchange='hitungjumlah();'
+                                    placeholder="Jumlah">
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>Copyright &copy;<a href="https://fathurit.blogspot.com/">Fathur IT</a></p>
+    </div>
+</body>
+<script type='text/javascript'>
+    function hitungjumlah() {
+        var angka1 = document.forms['penjumlahan']['angka1'].value;
+        angka1 = parseInt(angka1);
+        var angka2 = document.forms['penjumlahan']['angka2'].value;
+        angka2 = parseInt(angka2);
+        var jumlah = angka1 + angka2;
+        document.forms['penjumlahan']['jumlah'].value = jumlah;
+    }
+
+</script>
+
+</html>

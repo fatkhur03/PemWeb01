@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 2000px;
+            margin: 10px 0;
+        }
+
+        fieldset {
+            height: 2000px;
+            position: relative;
+            margin: 10px;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        section {
+            height: 300px;
+            width: 300px;
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            margin: 0 auto;
+        }
+
+        div#textBox {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            padding: 10px;
+            border: 1px solid #000;
+            overflow-x: scroll;
+        }
+
+        input,
+        button {
+            padding: 7px;
+        }
+
+        .floating {
+            width: 100%;
+            margin: 0 auto;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        hr {
+            margin: 3px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Simple Chat Box App</legend>
+        <section>
+            <div id="textBox">
+                <strong>
+                    <p>Simple ChatBox</p>
+                </strong>
+                <hr>
+            </div>
+            <div class="floating">
+                <input id="inputText" type="text">
+                <button type="button" onclick="sendMessage()">Kirim</button>
+            </div>
+        </section>
+    </fieldset>
+
+
+    <script>
+        function sendMessage() {
+            let text = document.getElementById("inputText").value;
+            let paragraph = document.createElement("P");
+
+            paragraph.innerHTML = String(text);
+            document.getElementById("textBox").appendChild(paragraph).style.margin = "10px";
+        }
+    </script>
+</body>
+
+</html>

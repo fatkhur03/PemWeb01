@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakrikum 11.1</title>
+    <script>
+        //membuat array fruits
+        let ket = ["Berikut ini adalah nama buah"];
+        let fruits = ["Appel", "Mangga", "Jeruk", "Durian", "Pisang"];
+        console.log(ket);
+
+        //menampilkan semua data pada array menggunakan looping for
+        for (let i = 0; i < fruits.length; i++){
+            console.log(fruits[i]);
+        }
+
+        fruits.push("Semangka", "Apel"); //untuk menambahkan data array
+        fruits.sort(); //untuk mengurutkan data dari  a-z
+        fruits.pop(); //untuk menghapus dsta paling akhir
+        
+        console.log("");
+
+        for (let i = 0; i < fruits.length; i++){
+            console.log(fruits[i]);
+        }
+
+        //membuat objek
+        let mobil = {
+            tipe: "Avanza",
+            merk: "Kijang",
+            tahun: 2022,
+            warna: "Merah",
+            jalan: function () {
+                console.log("Breeemmm...");
+            },
+        };
+        console.log(mobil);
+    </script>
+</head>
+<body>
+    <h1>Belajar Array</h1>
+</body>
+</html>

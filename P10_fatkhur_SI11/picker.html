@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .container {
+            display: flex;
+            margin: 50px 350px;
+            width: 500px;
+            height: 300px;
+        }
+
+        .box {
+            display: flex;
+            
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+
+    <script>
+
+
+        function imagepicker() {
+            const list_image = ["cring.gif", "nih.gif", "biu.gif", "duh.gif", "rawrr.gif",
+            ]
+            let pilihan = document.getElementById("option");
+
+            if (pilihan.value == "cring") {
+                let select = list_image[0];
+                document.getElementById("image").src = `images/${select}`
+                alert("Panda Cring")
+            }
+
+            if (pilihan.value == "nih") {
+                let select = list_image[1];
+                document.getElementById("image").src = `images/${select}`
+                alert("Mau gak 😁")
+            }
+
+            if (pilihan.value == "biu") {
+                let select = list_image[2];
+                document.getElementById("image").src = `images/${select}`
+                alert("biu biu 😅")
+            }
+
+            if (pilihan.value == "duh") {
+                let select = list_image[3];
+                document.getElementById("image").src = `images/${select}`
+                alert("Awwww")
+            }
+
+            if (pilihan.value == "rawrr") {
+                let select = list_image[4];
+                document.getElementById("image").src = `images/${select}`
+                alert("Rawrr 🧟‍♀️")
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Img-Picker Fathur IT</h1>
+    <hr>
+    <br>
+    <div style="text-align: center;">
+        <select id="option" onchange="imagepicker()">
+            <option value="" selected>Pilih Gambar</option>
+            <option value="cring">Cring</option>
+            <option value="nih">Nih</option>
+            <option value="biu">Biuu</option>
+            <option value="duh">Awwww</option>
+            <option value="rawrr">Rawrr</option>
+        </select>
+    </div>
+    <br>
+    <div class="container" id="container" >
+        <div class="box" id="box" >
+            <img id="image" align="center">
+        </div>
+    </div>
+
+
+</body>
+
+</html>

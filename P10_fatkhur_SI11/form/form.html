@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan Tiket by Fathur IT</title>
+    <!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Themify Icons-->
+	<link rel="stylesheet" href="css/themify-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="css/flexslider.css">
+
+    <link rel="stylesheet" href="mycss.css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        p {
+            color: red;
+            float: left;
+            margin-left: 1.5em;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Form Pemesanan Tiket by <a href="https://fathurit.blogspot.com/">Fathur IT</a></h1>
+    <hr>
+    <br>
+    <div class="container">
+        <form name="datapribadi" method="" action="">
+            <div class="form-group">
+                <div class="flex">       
+                    <label style="float: left;" for="name" class="">Nama Pemesan</label><p id="nama"></p>
+                </div>
+                <input type="text" class="form-control" placeholder="Masukkan Nama Pemesan" id="name" name="nama">
+            </div>
+            <div class="form-group">
+                <div class="flex">
+                    <label style="float: left;" for="email" class="">Email</label><p id="imel"></p>
+                </div>
+                <input type="text" class="form-control" placeholder="Masukkan Email" id="email1" name="email">
+            </div>
+            <div class="form-group">
+                <div class="flex">
+                    <label for="jam" class="">Jam Keberangkatan</label><p id="jamm"></p>
+                </div>
+                <input type="time" class="form-control" placeholder="Jam Keberangkatan" id="jam" name="jam">
+            </div>
+            <div class="form-group">
+                <div class="flex"> 
+                    <label for="tujuan" class="">Tujuan Keberangkatan</label><p id="tjn"></p>
+                </div>
+                <input type="text" class="form-control" placeholder="Masukkan Tujuan Keberangkatan" id="tujuan" name="tujuan">
+            </div>
+            <div class="form-group">
+                <div class="flex">
+                    <label for="tiket" class="">Jumlah Tiket</label><p id="tkt"></p>
+                </div>
+                <input type="number" class="form-control" placeholder="Masukkan Jumlah Tiket" id="tiket" name="tiket">
+            </div>
+            
+            <div class="form-group">
+                <input onClick='inputdata()' type="button" value="Pesan Now" class="btn btn-primary">
+                <input onclick='validasi()' type="reset" value="Reset" class="btn btn-warning">
+                <input onclick='validasi()' type="button" value="Cek Validasi" class="btn btn-danger">
+            </div>
+            <br>
+            <table class="table" id="databel">
+                <thead>
+                    <tr>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Jam</th>
+                        <th scope="col">Tujuan</th>
+                        <th scope="col">Tiket</th>
+                    </tr>
+                </thead>
+            </table>
+        </form>
+    </div>
+</body>
+<script>
+        function validasi() {
+            let isian_nama = document.getElementById("name").value;
+            let f = document.getElementById("nama");
+
+            let isian_email = document.getElementById("email1").value;
+            let f1 = document.getElementById("imel");
+
+            let isian_jam = document.getElementById("jam").value;
+            let f2 = document.getElementById("jamm");
+
+            let isian_tujuan = document.getElementById("tujuan").value;
+            let f3 = document.getElementById("tjn");
+
+            let isian_tiket = document.getElementById("tiket").value;
+            let f4 = document.getElementById("tkt");
+
+            if(isian_nama == "") {
+                f.innerHTML = `<p>` + "Masukkin nama yg bener😒" + `</p>`;
+                isian_nama.focus();
+            }else if(isian_nama.length > 30) {
+                f.innerHTML = `<p>` + "Maksimum 30 karakter." + `</p>`;
+            }else{
+                f.innerHTML = `<p></p>`;
+            }
+
+            if(isian_email == "") {
+                f1.innerHTML = `<p>` + "Email ini wajib isi tau!" + `</p>`
+            }else if(isian_email.length <= 9 || isian_email == "@gmail.com"){
+                f1.innerHTML = `<p>` + "Ketik yg bener😏" + `</p>`
+            }else{
+                f1.innerHTML = `<p></p>`;
+            }
+
+            if(isian_jam == "") {
+                f2.innerHTML = `<p>` + "Jam wajib diisi!" + `</p>`
+            }else{
+                f2.innerHTML = `<p></p>`
+            }
+            
+            if(isian_tujuan == "") {
+                f3.innerHTML = `<p>` + "Tujuannya isi yg bener!" + `</p>`
+            }else{
+                f3.innerHTML = `<p></p>`
+            }
+
+            if(isian_tiket == "" || isian_tiket <= 0) {
+                f4.innerHTML = `<p>` + "Beli tiket min 1 dan max 10 INGET gak boleh lebih!" + `</p>`
+            }else if(isian_tiket > 5){
+                f4.innerHTML = `<p>` + "Maximum 5 tiket." + `</p>`
+            }else{
+                f4.innerHTML = `<p></p>`
+            }
+        }
+
+    function inputdata() {
+            var n = document.forms['datapribadi']['nama'].value;
+            var e = document.forms['datapribadi']['email'].value;
+            var p = document.forms['datapribadi']['jam'].value;
+            var a = document.forms['datapribadi']['tujuan'].value;
+            var t = document.forms['datapribadi']['tiket'].value;
+
+            var tabel = document.getElementById("databel");
+            var baris = tabel.insertRow(1);
+            var kol1 = baris.insertCell(0);
+            var kol2 = baris.insertCell(1);
+            var kol3 = baris.insertCell(2);
+            var kol4 = baris.insertCell(3);
+            var kol5 = baris.insertCell(4);
+
+            kol1.innerHTML = n;
+            kol2.innerHTML = e;
+            kol3.innerHTML = p;
+            kol4.innerHTML = a;
+            kol5.innerHTML = t;
+        }
+</script>
+</html>

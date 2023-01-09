@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum 9.2</title>
+</head>
+
+<body style="padding: 10px;">
+    <div style="float:left; margin-left: 10px;">
+        <h2 style="font-family:Lucida Handwriting; color: red;">Dollar ke Rupiah</h2>
+        <hr>
+        <form action="">
+            <table style="font-family:Cascadia Code SemiBold;">
+                <tr>
+                    <td>Dollar</td>
+                    <td>:</td>
+                    <td><input type="number" id="dollar"></td>
+                </tr>
+                <tr>
+                    <td>Kurs Rupiah</td>
+                    <td>:</td>
+                    <td><input type="number" id="rupiah" value="14650"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><input type="button" value="Hitung" onclick="hitung_dollar()"></td>
+                </tr>
+                <tr>
+                    <td>Hasil</td>
+                    <td>:</td>
+                    <td><input type="text" id="hasil"></td>
+                </tr>
+            </table>
+        </form>
+        <script>
+            function hitung_dollar() {
+                let d = document.getElementById("dollar").value;
+                let r = document.getElementById("rupiah").value;
+                let hasil = d * r;
+
+                document.getElementById("hasil").value = "Rp." + hasil;
+            }
+        </script>
+    </div>
+    <div  style="float:right; margin-right:10px">
+        <h2 style="font-family:Lucida Handwriting; color: blue;">Rupiah ke Dollar</h2>
+        <hr>
+        <form action="">
+            <table style="font-family:Cascadia Code SemiBold;">
+                <tr>
+                    <td>Rupiah</td>
+                    <td>:</td>
+                    <td><input type="number" id="rupiah2"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><input type="button" value="Hitung" onclick="hitung_rupiah()"></td>
+                </tr>
+                <tr>
+                    <td>Dollar</td>
+                    <td>:</td>
+                    <td><input type="text" id="hasil2"></td>
+                </tr>
+            </table>
+        </form>
+        <script>
+            function hitung_rupiah(){
+                let r = document.getElementById("rupiah2").value;
+                let hasil = r * (1 / 14650);
+
+                document.getElementById("hasil2").value = "$" + hasil.toFixed(2);
+            }
+        </script>
+    </div>
+</body>
+
+</html>
